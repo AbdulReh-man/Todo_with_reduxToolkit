@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {addtodo, deletetodo} from '../features/todo/todoslice'
+import {addtodo, deletetodo, deleteall} from '../features/todo/todoslice'
 import { Link } from 'react-router-dom';
 
 function Addtodo() {
@@ -45,6 +45,7 @@ function Addtodo() {
       </button>
     </form>
 
+    <div className={`${todos.length>0 ?"block " : "hidden"} `}>
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -89,6 +90,17 @@ function Addtodo() {
          }
     </tbody>
     </table>
+
+    <div className='flex justify-center mt-6'>
+    <button
+        className=" text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+        onClick={()=> dispatch(deleteall())}
+      >
+        DELETE ALL
+      </button>
+    </div>
+    </div>
+   
     </div>
 
   )

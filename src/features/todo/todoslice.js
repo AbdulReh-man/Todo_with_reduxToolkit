@@ -36,8 +36,11 @@ export const todoslice = createSlice({
         user.text=text
       }
     },
+    deleteall: (state, action)=>{
+      state.todos=[]
+    }
   }
 });
 
-export const { addtodo, deletetodo, updatetodo } =todoslice.actions;
+export const { addtodo, deletetodo, updatetodo, deleteall } =todoslice.actions;
 export default todoslice.reducer;
