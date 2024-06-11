@@ -21,8 +21,8 @@ function Addtodo() {
 
     const {todos} = useSelector((state) => state.todos);
   return (
-    <div >
-      <form onSubmit={addtod} className="gap-4 mt-12 flex justify-center my-10 flex-wrap ">
+    <div className='w-full'>
+      <form onSubmit={addtod} className="gap-4 mt-12 flex md:flex-row flex-col justify-center items-center my-10 flex-wrap">
       <input
         type="text"
         className="bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -69,7 +69,7 @@ function Addtodo() {
           <td className="px-6 py-4 text-center ">
           {todo.name}
           </td>
-          <td className="px-6 py-4 text-center">
+          <td className="px-6 py-4 text-center ">
           {todo.text}
           </td>
           <td className=" py-4 text-center space-x-1">
